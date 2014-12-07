@@ -8,6 +8,6 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
+        <TextBlock FontSize="32" HorizontalAlignment="Center" VerticalAlignment="Center">Voodle the Bootstrapper!</TextBlock>
     </Grid>
 </Page>
