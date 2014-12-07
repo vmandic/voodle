@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30723.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Voodle.Web", "Voodle.Web\Voodle.Web.csproj", "{46DF955C-EF3D-4335-8AA8-D426CD6BA24C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Frontend", "Frontend", "{43D3A194-D530-433D-AFED-D836587AAC9D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Backend", "Backend", "{11B83FA3-DE69-4076-90D8-EF41223FCE18}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{7B20150C-CCD5-4CDA-A179-51E48C53DC41}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Voodle.Entities", "Voodle.Entities\Voodle.Entities.csproj", "{FE58E19C-FA88-4A8F-9EE8-DA56DDEC7EC2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{46DF955C-EF3D-4335-8AA8-D426CD6BA24C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46DF955C-EF3D-4335-8AA8-D426CD6BA24C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46DF955C-EF3D-4335-8AA8-D426CD6BA24C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46DF955C-EF3D-4335-8AA8-D426CD6BA24C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE58E19C-FA88-4A8F-9EE8-DA56DDEC7EC2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE58E19C-FA88-4A8F-9EE8-DA56DDEC7EC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE58E19C-FA88-4A8F-9EE8-DA56DDEC7EC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE58E19C-FA88-4A8F-9EE8-DA56DDEC7EC2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{46DF955C-EF3D-4335-8AA8-D426CD6BA24C} = {43D3A194-D530-433D-AFED-D836587AAC9D}
+		{FE58E19C-FA88-4A8F-9EE8-DA56DDEC7EC2} = {11B83FA3-DE69-4076-90D8-EF41223FCE18}
+	EndGlobalSection
+EndGlobal
