@@ -1,5 +1,6 @@
 ﻿using System.Web;
 using System.Web.Mvc;
+using Voodle.Web.Filters;
 
 namespace Voodle.Web
 {
@@ -8,6 +9,7 @@ namespace Voodle.Web
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
             filters.Add(new HandleErrorAttribute());
+            filters.Add(new WebAppRequireHTTPS());
         }
     }
 }

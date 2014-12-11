@@ -18,6 +18,10 @@ namespace Voodle.Web
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
+
+            // TODO: make'em happen!
+            //routes.MapRoute("Error404", "Error/Error404", MVC.Error.Error404());
+            //routes.MapRoute("Error500", "Error/Error500", MVC.Error.Error500());
         }
     }
 }

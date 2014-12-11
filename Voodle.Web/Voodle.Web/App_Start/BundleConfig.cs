@@ -15,10 +15,17 @@ namespace Voodle.Web
             bundles.Add(new ScriptBundle("~/js/modernizr").Include(
                         "~/Scripts/modernizr-*"));
 
-            bundles.Add(new ScriptBundle("~/js/app").Include(
+            bundles.Add(new ScriptBundle("~/js/app").Include
+            (
+                //GENERIC AND API SCRIPTS
                        "~/Scripts/jquery-{version}.js",
                        "~/Scripts/bootstrap.js",
-                       "~/Scripts/respond.js"));
+                       "~/Scripts/respond.js",
+                       "~/Scripts/toastr.js",
+
+                //SCRIPTS APP
+                       "~/ScriptsApp/base.js"
+           ));
 
             #endregion
 
@@ -27,9 +34,12 @@ namespace Voodle.Web
             //////////////////////////
 
             #region Styles
-            bundles.Add(new StyleBundle("~/css/app").Include(
+            bundles.Add(new StyleBundle("~/css/app").Include
+            (
                       "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                      "~/Content/site.css",
+                      "~/Content/toastr.css"
+            ));
             #endregion
 
             // enable optimizations, false is when debug, true for deployment

@@ -8,10 +8,6 @@ namespace Voodle.Web.Controllers.Base
 {
     public abstract partial class BaseWebController : Controller
     {
-        // GET: BaseMVC
-        public ActionResult Index()
-        {
-            return View();
-        }
+
     }
 }

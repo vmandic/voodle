@@ -27,7 +27,8 @@ public static partial class MVC
 {
     static readonly HelpPageClass s_HelpPage = new HelpPageClass();
     public static HelpPageClass HelpPage { get { return s_HelpPage; } }
-    public static T4MVC.HomeController Home = new T4MVC.HomeController();
+    public static Voodle.Web.Controllers.WebApp.HomeController Home = new Voodle.Web.Controllers.WebApp.T4MVC_HomeController();
+    public static Voodle.Web.Controllers.WebApp.UserController User = new Voodle.Web.Controllers.WebApp.T4MVC_UserController();
     public static T4MVC.SharedController Shared = new T4MVC.SharedController();
 }
 
