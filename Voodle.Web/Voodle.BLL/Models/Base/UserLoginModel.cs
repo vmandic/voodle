@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using Voodle.Utility;
 
-namespace Voodle.Web.Models
+namespace Voodle.BLL.Models.Base
 {
     public class UserLoginModel
     {
@@ -15,7 +15,7 @@ namespace Voodle.Web.Models
         public string Password { get; set; }
         [DisplayName("Remember me")]
         public bool RememberMe { get; set; }
-        public int Active { get; set; }
+        public bool Active { get; set; }
         [DisplayName("Username")]
         public string Username { get; set; }
         [DisplayName("First name")]

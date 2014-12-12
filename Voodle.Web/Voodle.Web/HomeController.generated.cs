@@ -143,10 +143,10 @@ namespace Voodle.Web.Controllers.WebApp
         }
 
         [NonAction]
-        partial void LoginOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, Voodle.Web.Models.UserLoginModel model, string returnUrl);
+        partial void LoginOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, Voodle.BLL.Models.Base.UserLoginModel model, string returnUrl);
 
         [NonAction]
-        public override System.Web.Mvc.ActionResult Login(Voodle.Web.Models.UserLoginModel model, string returnUrl)
+        public override System.Web.Mvc.ActionResult Login(Voodle.BLL.Models.Base.UserLoginModel model, string returnUrl)
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Login);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "model", model);

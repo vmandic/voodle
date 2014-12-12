@@ -1,19 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Web;
 using System.Web.Mvc;
+using Voodle.BLL.Models.Base;
 using Voodle.BLL.StaticServices;
 using Voodle.Utility;
 using Voodle.Web.Controllers.Base;
-using Voodle.Web.Models;
 using Voodle.Web.Utility;
 
 namespace Voodle.Web.Controllers.WebApp
 {
     public partial class HomeController : BaseWebController
     {
-        // GET: Home
         public virtual ActionResult Index()
         {
             return View();
@@ -29,7 +25,6 @@ namespace Voodle.Web.Controllers.WebApp
             return View();
         }
 
-        // GET: /Security/Login
         [HttpPost]
         [AllowAnonymous]
         public virtual ActionResult Login(UserLoginModel model, string returnUrl)
@@ -42,7 +37,7 @@ namespace Voodle.Web.Controllers.WebApp
                 model.RememberMe = true;
             }
 
-            UserLoginModel userLoginModel = UserService.LoginByUsernameAndPassword(model.Username, model.Password);
+            UserLoginModel userLoginModel = UserService.LoginByUsernameAndPassword(DbManager, model.Username, model.Password);
 
             if (!string.IsNullOrEmpty(returnUrl))
                 returnUrl = HttpUtility.UrlDecode(returnUrl);
@@ -69,9 +64,6 @@ namespace Voodle.Web.Controllers.WebApp
             return View(new UserLoginModel());
         }
 
-        /// <summary>
-        /// Get: // Logoff
-        /// </summary>
         [HttpGet]
         [AllowAnonymous]
         public virtual ActionResult Logout()

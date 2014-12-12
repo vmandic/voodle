@@ -2,9 +2,8 @@
 using System;
 using System.Web;
 using System.Web.Security;
+using Voodle.BLL.Models.Base;
 using Voodle.Utility;
-using Voodle.Web.Models;
-using Voodle.Web.ViewModels;
 
 namespace Voodle.Web.Utility
 {
