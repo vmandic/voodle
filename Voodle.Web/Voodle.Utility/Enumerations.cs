@@ -14,10 +14,11 @@ namespace Voodle.Utility
         RegularUser = 3
     }
 
-    public interface IResponseStatus
+    public interface IResponseModel<ResponseType>
     {
-        ResponseStatus ResponseStatus { get; set; }
-        string ResponseInfo { get; set; }
+        ResponseType Response { get; set; }
+        ResponseStatus Status { get; set; }
+        string Message { get; set; }
     }
 
     public interface IResponseSaved
@@ -28,6 +29,7 @@ namespace Voodle.Utility
     public enum ResponseStatus
     {
         OK = 200,
+        SAVED = 201,
         ERROR = 500
     }
 
@@ -46,7 +48,9 @@ namespace Voodle.Utility
         [Description("ios")]
         IOS,
         [Description("wp")]
-        WindowsPhone
+        WindowsPhone,
+        [Description("wsa")]
+        WindowsStoreApp
     }
 
     public enum PushNotificationStatus

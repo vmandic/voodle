@@ -1,6 +1,6 @@
 ﻿using Voodle.Utility;
 
-namespace Voodle.Web.ViewModels
+namespace Voodle.BLL.Models.Base
 {
     public class UserAuthenticationModel
     {

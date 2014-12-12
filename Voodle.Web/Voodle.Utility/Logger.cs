@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Specialized;
 using System.IO;
+using System.Net.Http;
 using System.Web;
 
 namespace Voodle.Utility
@@ -44,7 +45,7 @@ namespace Voodle.Utility
 
             String message = GetExceptionMessage(exc, false, "", requestMsg, iDStr, userName);
 
-            string sFolderName = @"C:\AppErrors\";
+            string sFolderName = @"C:\WebAppErrors\";
 
             if (!Directory.Exists(sFolderName))
                 Directory.CreateDirectory(sFolderName);
@@ -63,6 +64,34 @@ namespace Voodle.Utility
             //if (sendMail)
             //    SendErrorMail(message);
 
+        }
+
+        public static void Log(Exception exc, HttpRequestMessage request)
+        {
+            StreamWriter objSw = null;
+            String requestMsg = request.Headers.ToString();
+
+            requestMsg += "URL: " + request.RequestUri.AbsolutePath + Environment.NewLine;
+
+            String message = GetExceptionMessage(exc, false, "", requestMsg);
+
+            string sFolderName = @"C:\WsAppErrors\";
+
+            if (!Directory.Exists(sFolderName))
+                Directory.CreateDirectory(sFolderName);
+
+            string sFilePath = sFolderName + "Error.log";
+
+            objSw = new StreamWriter(sFilePath, true);
+            objSw.WriteLine(message + Environment.NewLine);
+
+            if (objSw != null)
+            {
+                objSw.Flush();
+                objSw.Dispose();
+            }
+
+            //SendErrMail(message);
         }
 
         public static string GetExceptionMessage(Exception ex, bool isInnerException = false, string err = "", String requestMsg = "", String iD = "", String userName = "")

@@ -74,12 +74,22 @@ namespace Voodle.Web.Controllers.WebApp
         public class ActionNamesClass
         {
             public readonly string Index = "Index";
+            public readonly string CreateGet = "CreateGet";
+            public readonly string CreatePost = "CreatePost";
+            public readonly string UpdateGet = "UpdateGet";
+            public readonly string UpdatePost = "UpdatePost";
+            public readonly string Delete = "Delete";
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionNameConstants
         {
             public const string Index = "Index";
+            public const string CreateGet = "CreateGet";
+            public const string CreatePost = "CreatePost";
+            public const string UpdateGet = "UpdateGet";
+            public const string UpdatePost = "UpdatePost";
+            public const string Delete = "Delete";
         }
 
 
@@ -110,6 +120,61 @@ namespace Voodle.Web.Controllers.WebApp
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Index);
             IndexOverride(callInfo);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void CreateGetOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
+
+        [NonAction]
+        public override System.Web.Mvc.ActionResult CreateGet()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.CreateGet);
+            CreateGetOverride(callInfo);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void CreatePostOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
+
+        [NonAction]
+        public override System.Web.Mvc.ActionResult CreatePost()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.CreatePost);
+            CreatePostOverride(callInfo);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void UpdateGetOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
+
+        [NonAction]
+        public override System.Web.Mvc.ActionResult UpdateGet()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.UpdateGet);
+            UpdateGetOverride(callInfo);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void UpdatePostOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
+
+        [NonAction]
+        public override System.Web.Mvc.ActionResult UpdatePost()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.UpdatePost);
+            UpdatePostOverride(callInfo);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void DeleteOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
+
+        [NonAction]
+        public override System.Web.Mvc.ActionResult Delete()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Delete);
+            DeleteOverride(callInfo);
             return callInfo;
         }
 
