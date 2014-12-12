@@ -23,13 +23,13 @@ using System.Web.Routing;
 using T4MVC;
 namespace Voodle.Web.Controllers.WebApp
 {
-    public partial class UserController
+    public partial class SecurityController
     {
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public UserController() { }
+        public SecurityController() { }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        protected UserController(Dummy d) { }
+        protected SecurityController(Dummy d) { }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         protected RedirectToRouteResult RedirectToAction(ActionResult result)
@@ -57,15 +57,21 @@ namespace Voodle.Web.Controllers.WebApp
             return RedirectToActionPermanent(taskResult.Result);
         }
 
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public virtual System.Web.Mvc.ActionResult LoginPost()
+        {
+            return new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.LoginPost);
+        }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public UserController Actions { get { return MVC.User; } }
+        public SecurityController Actions { get { return MVC.Security; } }
         [GeneratedCode("T4MVC", "2.0")]
         public readonly string Area = "";
         [GeneratedCode("T4MVC", "2.0")]
-        public readonly string Name = "User";
+        public readonly string Name = "Security";
         [GeneratedCode("T4MVC", "2.0")]
-        public const string NameConst = "User";
+        public const string NameConst = "Security";
 
         static readonly ActionNamesClass s_actions = new ActionNamesClass();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -73,26 +79,37 @@ namespace Voodle.Web.Controllers.WebApp
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionNamesClass
         {
-            public readonly string Index = "Index";
-            public readonly string CreateGet = "CreateGet";
-            public readonly string CreatePost = "CreatePost";
-            public readonly string UpdateGet = "UpdateGet";
-            public readonly string UpdatePost = "UpdatePost";
-            public readonly string DeleteGet = "DeleteGet";
+            public readonly string LoginGet = "LoginGet";
+            public readonly string LoginPost = "LoginPost";
+            public readonly string Logout = "Logout";
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionNameConstants
         {
-            public const string Index = "Index";
-            public const string CreateGet = "CreateGet";
-            public const string CreatePost = "CreatePost";
-            public const string UpdateGet = "UpdateGet";
-            public const string UpdatePost = "UpdatePost";
-            public const string DeleteGet = "DeleteGet";
+            public const string LoginGet = "LoginGet";
+            public const string LoginPost = "LoginPost";
+            public const string Logout = "Logout";
         }
 
 
+        static readonly ActionParamsClass_LoginGet s_params_LoginGet = new ActionParamsClass_LoginGet();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_LoginGet LoginGetParams { get { return s_params_LoginGet; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_LoginGet
+        {
+            public readonly string returnUrl = "returnUrl";
+        }
+        static readonly ActionParamsClass_LoginPost s_params_LoginPost = new ActionParamsClass_LoginPost();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_LoginPost LoginPostParams { get { return s_params_LoginPost; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_LoginPost
+        {
+            public readonly string model = "model";
+            public readonly string returnUrl = "returnUrl";
+        }
         static readonly ViewsClass s_views = new ViewsClass();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public ViewsClass Views { get { return s_views; } }
@@ -103,78 +120,50 @@ namespace Voodle.Web.Controllers.WebApp
             public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
             public class _ViewNamesClass
             {
+                public readonly string Login = "Login";
             }
+            public readonly string Login = "~/Views/Security/Login.cshtml";
         }
     }
 
     [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-    public partial class T4MVC_UserController : Voodle.Web.Controllers.WebApp.UserController
+    public partial class T4MVC_SecurityController : Voodle.Web.Controllers.WebApp.SecurityController
     {
-        public T4MVC_UserController() : base(Dummy.Instance) { }
+        public T4MVC_SecurityController() : base(Dummy.Instance) { }
 
         [NonAction]
-        partial void IndexOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
+        partial void LoginGetOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, string returnUrl);
 
         [NonAction]
-        public override System.Web.Mvc.ActionResult Index()
+        public override System.Web.Mvc.ActionResult LoginGet(string returnUrl)
         {
-            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Index);
-            IndexOverride(callInfo);
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.LoginGet);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "returnUrl", returnUrl);
+            LoginGetOverride(callInfo, returnUrl);
             return callInfo;
         }
 
         [NonAction]
-        partial void CreateGetOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
+        partial void LoginPostOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, Voodle.BLL.Models.Base.UserLoginModel model, string returnUrl);
 
         [NonAction]
-        public override System.Web.Mvc.ActionResult CreateGet()
+        public override System.Web.Mvc.ActionResult LoginPost(Voodle.BLL.Models.Base.UserLoginModel model, string returnUrl)
         {
-            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.CreateGet);
-            CreateGetOverride(callInfo);
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.LoginPost);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "model", model);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "returnUrl", returnUrl);
+            LoginPostOverride(callInfo, model, returnUrl);
             return callInfo;
         }
 
         [NonAction]
-        partial void CreatePostOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
+        partial void LogoutOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
 
         [NonAction]
-        public override System.Web.Mvc.ActionResult CreatePost()
+        public override System.Web.Mvc.ActionResult Logout()
         {
-            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.CreatePost);
-            CreatePostOverride(callInfo);
-            return callInfo;
-        }
-
-        [NonAction]
-        partial void UpdateGetOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
-
-        [NonAction]
-        public override System.Web.Mvc.ActionResult UpdateGet()
-        {
-            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.UpdateGet);
-            UpdateGetOverride(callInfo);
-            return callInfo;
-        }
-
-        [NonAction]
-        partial void UpdatePostOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
-
-        [NonAction]
-        public override System.Web.Mvc.ActionResult UpdatePost()
-        {
-            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.UpdatePost);
-            UpdatePostOverride(callInfo);
-            return callInfo;
-        }
-
-        [NonAction]
-        partial void DeleteGetOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
-
-        [NonAction]
-        public override System.Web.Mvc.ActionResult DeleteGet()
-        {
-            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.DeleteGet);
-            DeleteGetOverride(callInfo);
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Logout);
+            LogoutOverride(callInfo);
             return callInfo;
         }
 

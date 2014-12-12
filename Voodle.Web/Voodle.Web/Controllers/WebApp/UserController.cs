@@ -15,15 +15,26 @@ namespace Voodle.Web.Controllers.WebApp
             return View();
         }
 
-        public virtual ActionResult CreateGet() { return null; }
+        [HttpGet]
+        public virtual ActionResult CreateGet()
+        {
 
+
+
+            return null;
+        }
+
+        [HttpPost]
         public virtual ActionResult CreatePost() { return null; }
 
+        [HttpGet]
         public virtual ActionResult UpdateGet() { return null; }
 
+        [HttpPost]
         public virtual ActionResult UpdatePost() { return null; }
 
-        public virtual ActionResult Delete() { return null; }
+        [HttpGet]
+        public virtual ActionResult DeleteGet() { return null; }
 
     }
 }

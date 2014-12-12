@@ -74,28 +74,15 @@ namespace Voodle.Web.Controllers.WebApp
         public class ActionNamesClass
         {
             public readonly string Index = "Index";
-            public readonly string Login = "Login";
-            public readonly string Logout = "Logout";
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionNameConstants
         {
             public const string Index = "Index";
-            public const string Login = "Login";
-            public const string Logout = "Logout";
         }
 
 
-        static readonly ActionParamsClass_Login s_params_Login = new ActionParamsClass_Login();
-        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public ActionParamsClass_Login LoginParams { get { return s_params_Login; } }
-        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public class ActionParamsClass_Login
-        {
-            public readonly string returnUrl = "returnUrl";
-            public readonly string model = "model";
-        }
         static readonly ViewsClass s_views = new ViewsClass();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public ViewsClass Views { get { return s_views; } }
@@ -107,10 +94,8 @@ namespace Voodle.Web.Controllers.WebApp
             public class _ViewNamesClass
             {
                 public readonly string Index = "Index";
-                public readonly string Login = "Login";
             }
             public readonly string Index = "~/Views/Home/Index.cshtml";
-            public readonly string Login = "~/Views/Home/Login.cshtml";
         }
     }
 
@@ -127,42 +112,6 @@ namespace Voodle.Web.Controllers.WebApp
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Index);
             IndexOverride(callInfo);
-            return callInfo;
-        }
-
-        [NonAction]
-        partial void LoginOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, string returnUrl);
-
-        [NonAction]
-        public override System.Web.Mvc.ActionResult Login(string returnUrl)
-        {
-            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Login);
-            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "returnUrl", returnUrl);
-            LoginOverride(callInfo, returnUrl);
-            return callInfo;
-        }
-
-        [NonAction]
-        partial void LoginOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, Voodle.BLL.Models.Base.UserLoginModel model, string returnUrl);
-
-        [NonAction]
-        public override System.Web.Mvc.ActionResult Login(Voodle.BLL.Models.Base.UserLoginModel model, string returnUrl)
-        {
-            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Login);
-            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "model", model);
-            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "returnUrl", returnUrl);
-            LoginOverride(callInfo, model, returnUrl);
-            return callInfo;
-        }
-
-        [NonAction]
-        partial void LogoutOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
-
-        [NonAction]
-        public override System.Web.Mvc.ActionResult Logout()
-        {
-            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Logout);
-            LogoutOverride(callInfo);
             return callInfo;
         }
 

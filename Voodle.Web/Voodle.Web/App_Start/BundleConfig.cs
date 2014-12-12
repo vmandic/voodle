@@ -36,9 +36,13 @@ namespace Voodle.Web
             #region Styles
             bundles.Add(new StyleBundle("~/css/app").Include
             (
+                //GENERIC AND API STYLES
                       "~/Content/bootstrap.css",
-                      "~/Content/site.css",
-                      "~/Content/toastr.css"
+                      "~/Content/bootstrap-theme.css",
+                      "~/Content/toastr.css",
+
+                //STYLES APP
+                      "~/StylesApp/base.css"
             ));
             #endregion
 

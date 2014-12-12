@@ -5,6 +5,7 @@ using Voodle.BLL.Repository;
 using Voodle.Entities;
 using Voodle.Utility;
 using Voodle.BLL.Converters;
+using System.Data.Entity;
 
 namespace Voodle.BLL.StaticServices
 {
@@ -19,6 +20,8 @@ namespace Voodle.BLL.StaticServices
             bool userExists = false;
 
             IGenericRepository<User> userRepo = new GenericRepository<User>(dbManager.Context);
+
+            userRepo.DbSet.Include(x => x.Email);
 
             // login with username or email, both are anyways unique, at least should be... :-)
             if (username.Contains('@'))

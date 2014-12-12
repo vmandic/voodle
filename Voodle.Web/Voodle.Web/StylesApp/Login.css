@@ -1,0 +1,4 @@
+﻿div#login-body div.login-buttons input[type="button"],
+div#login-body div.login-buttons input[type="submit"] {
+  width: 100%;
+}
