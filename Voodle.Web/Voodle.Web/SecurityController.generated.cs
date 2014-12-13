@@ -82,6 +82,7 @@ namespace Voodle.Web.Controllers.WebApp
             public readonly string LoginGet = "LoginGet";
             public readonly string LoginPost = "LoginPost";
             public readonly string Logout = "Logout";
+            public readonly string Register = "Register";
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -90,6 +91,7 @@ namespace Voodle.Web.Controllers.WebApp
             public const string LoginGet = "LoginGet";
             public const string LoginPost = "LoginPost";
             public const string Logout = "Logout";
+            public const string Register = "Register";
         }
 
 
@@ -121,8 +123,10 @@ namespace Voodle.Web.Controllers.WebApp
             public class _ViewNamesClass
             {
                 public readonly string Login = "Login";
+                public readonly string Register = "Register";
             }
             public readonly string Login = "~/Views/Security/Login.cshtml";
+            public readonly string Register = "~/Views/Security/Register.cshtml";
         }
     }
 
@@ -164,6 +168,17 @@ namespace Voodle.Web.Controllers.WebApp
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Logout);
             LogoutOverride(callInfo);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void RegisterOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
+
+        [NonAction]
+        public override System.Web.Mvc.ActionResult Register()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Register);
+            RegisterOverride(callInfo);
             return callInfo;
         }
 

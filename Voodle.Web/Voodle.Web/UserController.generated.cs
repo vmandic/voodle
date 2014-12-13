@@ -57,6 +57,30 @@ namespace Voodle.Web.Controllers.WebApp
             return RedirectToActionPermanent(taskResult.Result);
         }
 
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public virtual System.Web.Mvc.ActionResult CreatePost()
+        {
+            return new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.CreatePost);
+        }
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public virtual System.Web.Mvc.ActionResult UpdateGet()
+        {
+            return new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.UpdateGet);
+        }
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public virtual System.Web.Mvc.ActionResult UpdatePost()
+        {
+            return new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.UpdatePost);
+        }
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public virtual System.Web.Mvc.ActionResult DeleteGet()
+        {
+            return new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.DeleteGet);
+        }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public UserController Actions { get { return MVC.User; } }
@@ -93,6 +117,38 @@ namespace Voodle.Web.Controllers.WebApp
         }
 
 
+        static readonly ActionParamsClass_CreatePost s_params_CreatePost = new ActionParamsClass_CreatePost();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_CreatePost CreatePostParams { get { return s_params_CreatePost; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_CreatePost
+        {
+            public readonly string userModel = "userModel";
+        }
+        static readonly ActionParamsClass_UpdateGet s_params_UpdateGet = new ActionParamsClass_UpdateGet();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_UpdateGet UpdateGetParams { get { return s_params_UpdateGet; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_UpdateGet
+        {
+            public readonly string id = "id";
+        }
+        static readonly ActionParamsClass_UpdatePost s_params_UpdatePost = new ActionParamsClass_UpdatePost();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_UpdatePost UpdatePostParams { get { return s_params_UpdatePost; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_UpdatePost
+        {
+            public readonly string userModel = "userModel";
+        }
+        static readonly ActionParamsClass_DeleteGet s_params_DeleteGet = new ActionParamsClass_DeleteGet();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_DeleteGet DeleteGetParams { get { return s_params_DeleteGet; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_DeleteGet
+        {
+            public readonly string id = "id";
+        }
         static readonly ViewsClass s_views = new ViewsClass();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public ViewsClass Views { get { return s_views; } }
@@ -103,7 +159,11 @@ namespace Voodle.Web.Controllers.WebApp
             public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
             public class _ViewNamesClass
             {
+                public readonly string AddDetailsUser = "AddDetailsUser";
+                public readonly string ListUser = "ListUser";
             }
+            public readonly string AddDetailsUser = "~/Views/User/AddDetailsUser.cshtml";
+            public readonly string ListUser = "~/Views/User/ListUser.cshtml";
         }
     }
 
@@ -135,46 +195,50 @@ namespace Voodle.Web.Controllers.WebApp
         }
 
         [NonAction]
-        partial void CreatePostOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
+        partial void CreatePostOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, Voodle.BLL.Models.Base.UserModel userModel);
 
         [NonAction]
-        public override System.Web.Mvc.ActionResult CreatePost()
+        public override System.Web.Mvc.ActionResult CreatePost(Voodle.BLL.Models.Base.UserModel userModel)
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.CreatePost);
-            CreatePostOverride(callInfo);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "userModel", userModel);
+            CreatePostOverride(callInfo, userModel);
             return callInfo;
         }
 
         [NonAction]
-        partial void UpdateGetOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
+        partial void UpdateGetOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, string id);
 
         [NonAction]
-        public override System.Web.Mvc.ActionResult UpdateGet()
+        public override System.Web.Mvc.ActionResult UpdateGet(string id)
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.UpdateGet);
-            UpdateGetOverride(callInfo);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "id", id);
+            UpdateGetOverride(callInfo, id);
             return callInfo;
         }
 
         [NonAction]
-        partial void UpdatePostOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
+        partial void UpdatePostOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, Voodle.BLL.Models.Base.UserModel userModel);
 
         [NonAction]
-        public override System.Web.Mvc.ActionResult UpdatePost()
+        public override System.Web.Mvc.ActionResult UpdatePost(Voodle.BLL.Models.Base.UserModel userModel)
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.UpdatePost);
-            UpdatePostOverride(callInfo);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "userModel", userModel);
+            UpdatePostOverride(callInfo, userModel);
             return callInfo;
         }
 
         [NonAction]
-        partial void DeleteGetOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
+        partial void DeleteGetOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, string id);
 
         [NonAction]
-        public override System.Web.Mvc.ActionResult DeleteGet()
+        public override System.Web.Mvc.ActionResult DeleteGet(string id)
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.DeleteGet);
-            DeleteGetOverride(callInfo);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "id", id);
+            DeleteGetOverride(callInfo, id);
             return callInfo;
         }
 

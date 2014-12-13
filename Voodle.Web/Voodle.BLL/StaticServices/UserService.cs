@@ -6,6 +6,8 @@ using Voodle.Entities;
 using Voodle.Utility;
 using Voodle.BLL.Converters;
 using System.Data.Entity;
+using System.Collections.Generic;
+using System.Web.Mvc;
 
 namespace Voodle.BLL.StaticServices
 {
@@ -59,6 +61,17 @@ namespace Voodle.BLL.StaticServices
             return userLoginModel;
         }
 
+        public static UserModel GetSingleById(DbContextManager dbManager, int id)
+        {
+            var userModel = new UserModel();
+            User userEntity = new GenericRepository<User>(dbManager.Context).All().FirstOrDefault(x => x.ID == id);
+
+            if (userEntity != null)
+                userModel = userEntity.ToUserModel();
+
+            return userModel;
+        }
+
         public static UserModel GetSingleByUserLoginModel_Mobile(DbContextManager dbManager, UserLoginModel userLoginModel)
         {
             UserModel userModel = new GenericRepository<User>(dbManager.Context)
@@ -108,6 +121,25 @@ namespace Voodle.BLL.StaticServices
             userModel.Saved = repo.SaveChanges();
 
             return userModel;
+        }
+
+        public static bool DeleteById(DbContextManager dbManager, int p)
+        {
+            throw new NotImplementedException();
+        }
+
+        public static IEnumerable<SelectListItem> GetRoles(DbContextManager dbManager)
+        {
+            var roles = new List<SelectListItem>();
+            var repo = new GenericRepository<Role>(dbManager.Context);
+
+            roles = repo.All().Select(x => new SelectListItem()
+            {
+                Text = x.Name,
+                Value = String.Concat(x.ID)
+            }).ToList();
+
+            return roles;
         }
     }
 }

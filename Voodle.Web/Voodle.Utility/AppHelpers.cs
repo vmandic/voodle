@@ -4,10 +4,11 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
+using Voodle.Utility;
 
 namespace Voodle.Web.Utility
 {
-    public static class Helpers
+    public static class AppHelpers
     {
         public static string CreateRandomPassword(int passwordLength = 5)
         {
@@ -19,6 +20,11 @@ namespace Voodle.Web.Utility
                 chars[i] = allowedChars[rnd.Next(0, allowedChars.Length)];
 
             return new string(chars);
+        }
+
+        public static string ResolveRole(int roleId)
+        {
+            return ((AppRole)roleId).GetDescription();
         }
     }
 

@@ -4,13 +4,31 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Voodle.BLL.Models.Base;
+using Voodle.BLL.Models.WebApp;
 using Voodle.BLL.Models.WebService.RequestModels;
 using Voodle.Entities;
+using Voodle.Utility;
 
 namespace Voodle.BLL.Converters
 {
     public static class ModelsToEntities
     {
+        public static PushNotification ToPushNotificationEntity(this PushNotificationModel m)
+        {
+            PushNotificationModel model = m;
+            var pushNotificationEntity = new PushNotification();
+            DateTime now = DateTime.Now;
+
+            pushNotificationEntity.CreatedAt =
+            pushNotificationEntity.ModifiedAt = now;
+            pushNotificationEntity.Description = model.Description;
+            pushNotificationEntity.Message = model.Message;
+            pushNotificationEntity.MobileDeviceID = model.MobileDeviceID;
+            pushNotificationEntity.Status = (int)PushNotificationStatus.Unprocessed;
+
+            return pushNotificationEntity;
+        }
+
         public static MobileDevice ToMobileDeviceEntity(this RegisterMobileDeviceRequestModel m, MobileDevice entity = null)
         {
             RegisterMobileDeviceRequestModel model = m;

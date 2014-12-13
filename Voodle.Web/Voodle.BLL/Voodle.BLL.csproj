@@ -44,6 +44,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web.Mvc, Version=4.0.0.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -59,6 +60,7 @@
     <Compile Include="Models\Base\UserAuthenticationModel.cs" />
     <Compile Include="Models\Base\UserLoginModel.cs" />
     <Compile Include="Models\Base\UserModel.cs" />
+    <Compile Include="Models\WebApp\PushNotificationModel.cs" />
     <Compile Include="Models\WebService\RequestModels\RegisterMobileDeviceRequestModel.cs" />
     <Compile Include="Models\WebService\ResponseModels\UserLoginAndSettingsResponseModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -82,9 +84,7 @@
       <Name>Voodle.Utility</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Models\WebApp\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

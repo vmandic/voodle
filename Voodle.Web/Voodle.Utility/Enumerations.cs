@@ -7,10 +7,19 @@ using System.Threading.Tasks;
 
 namespace Voodle.Utility
 {
+    public enum ViewMode
+    {
+        Create,
+        Update
+    }
+
     public enum AppRole
     {
+        [Description("System administrator")]
         SystemAdministrator = 1,
+        [Description("Super user")]
         SuperUser = 2,
+        [Description("Regular user")]
         RegularUser = 3
     }
 
